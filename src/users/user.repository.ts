@@ -16,6 +16,11 @@ export class UserRepository {
     return user;
   }
 
+  async findUserByIdWithoutPassword(userId: string): Promise<User | null> {
+    const user = await this.userModel.findById(userId).select('-password');
+    return user;
+  }
+
   async existByEmail(email: string): Promise<boolean> {
     const result = await this.userModel.exists({ email });
     return result;
