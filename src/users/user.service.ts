@@ -4,23 +4,22 @@ import { Model } from 'mongoose';
 import { UserRequestDto } from './dto/user.request.dto';
 import { User } from './user.schema';
 import * as bcrypt from 'bcrypt';
+import { UserRepository } from './user.repository';
 
 @Injectable()
 export class UserService {
-  constructor(
-    @InjectModel(User.name) private readonly userModel: Model<User>,
-  ) {}
+  constructor(private readonly userRepository: UserRepository) {}
 
   async signUp(body: UserRequestDto) {
     const { email, userName, password } = body;
-    const isUserExist = await this.userModel.exists({ email });
+    const isUserExist = await this.userRepository.existByEmail(email);
 
     if (isUserExist) {
       throw new UnauthorizedException('user already exist');
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await this.userModel.create({
+    const user = await this.userRepository.create({
       email,
       userName,
       password: hashedPassword,
