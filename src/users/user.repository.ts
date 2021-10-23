@@ -11,6 +11,11 @@ export class UserRepository {
     private readonly userModel: Model<User>,
   ) {}
 
+  async findUserByEmail(email: string): Promise<User | null> {
+    const user = await this.userModel.findOne({ email });
+    return user;
+  }
+
   async existByEmail(email: string): Promise<boolean> {
     const result = await this.userModel.exists({ email });
     return result;
