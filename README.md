@@ -26,6 +26,17 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+##Enviroment
+
+```bash
+PORT=5000
+MONGODB_URI=mongodb+srv://
+MODE='dev'
+SWAGGER_USER=SWAGGER_USER
+SWAGGER_PASSWORD=SWAGGER_PASSWORD
+JWT_SECRET='JWT_SECRET'
+```
+
 ## Installation
 
 ```bash
