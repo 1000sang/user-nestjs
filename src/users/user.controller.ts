@@ -6,11 +6,11 @@ import {
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
-import { AuthService } from 'src/auth/auth.service';
-import { LoginResponseDto } from 'src/auth/dto/auth.dto';
-import { LoginRequestDto } from 'src/auth/dto/login.request';
-import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
-import { CurrentUser } from 'src/common/decorators/user.decorator';
+import { AuthService } from '../auth/auth.service';
+import { LoginResponseDto } from '../auth/dto/auth.dto';
+import { LoginRequestDto } from '../auth/dto/login.request';
+import { JwtAuthGuard } from '../auth/jwt/jwt.guard';
+import { CurrentUser } from '../common/decorators/user.decorator';
 import { ReadOnlyUserDto } from './dto/user.dto';
 import { UserRequestDto } from './dto/user.request.dto';
 import { UserService } from './user.service';

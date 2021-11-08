@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AuthModule } from 'src/auth/auth.module';
+import { AuthModule } from '../auth/auth.module';
 import { UserController } from './user.controller';
 import { UserRepository } from './user.repository';
 import { User, UserSchema } from './user.schema';

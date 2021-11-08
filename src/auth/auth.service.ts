@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { isEmpty } from 'class-validator';
-import { UserRepository } from 'src/users/user.repository';
+import { UserRepository } from '../users/user.repository';
 import { LoginRequestDto } from './dto/login.request';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
