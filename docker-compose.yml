@@ -1,0 +1,36 @@
+version: '3.2'
+services:
+  mongodb:
+    build:
+      context: ./
+      dockerfile: ./mongo/dockerfile
+    container_name: mongo
+    restart: always
+    ports:
+      - ${MONGO_PORT}:27017
+    volumes:
+      - ./mongo/data:/data/db
+      - ./mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+    # networks:
+    #   - app-network
+    env_file:
+      - .env
+#   nest:
+#     build:
+#       context: ../
+#       dockerfile: ./docker/dockerfile
+#     container_name: nest
+#     ports:
+#       - 3000:3000
+#     volumes:
+#       - ../src:/app/src
+#     depends_on:
+#       - mongodb
+#     networks:
+#       - app-network
+#     env_file:
+#       - ../.env
+
+# networks:
+#   app-network:
+#     driver: bridge
