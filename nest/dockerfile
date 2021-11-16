@@ -2,8 +2,8 @@ FROM node:14.18.1-alpine
 
 WORKDIR /app
 
-COPY nest/package*.json ./
-COPY nest/tsconfig*.json ./
+COPY ./package*.json ./
+COPY ./tsconfig*.json ./
 
 RUN npm install
 RUN npm install --save-dev
