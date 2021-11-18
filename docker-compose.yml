@@ -6,12 +6,6 @@ services:
       context: ./mongo
       dockerfile: ./dockerfile
     restart: always
-    # environment:
-    #   - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
-    #   - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-    #   - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-    #   - DB_USER=user
-    #   - DB_PWD=123123
     ports:
       - ${MONGO_PORT}:27017
     volumes:
