@@ -34,3 +34,10 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 .env
+
+# mongo
+/mongo/data
+
+# nest
+/nest/dist
+/nest/node_modules
