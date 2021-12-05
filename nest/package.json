@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.1.1",
-    "@nestjs/config": "^1.0.2",
+    "@nestjs/config": "^1.1.5",
     "@nestjs/core": "^8.1.1",
     "@nestjs/jwt": "^8.0.0",
     "@nestjs/mongoose": "^9.0.1",
@@ -33,6 +33,7 @@
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "express-basic-auth": "^1.2.0",
+    "hbs": "^4.2.0",
     "i": "^0.3.7",
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.14",

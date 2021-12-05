@@ -13,7 +13,9 @@ import { HttpExceptionFilter } from './common/filter/http-exception.filter';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     MongooseModule.forRoot(String(process.env.MONGODB_URI), {}),
     UserModule,
     AuthModule,

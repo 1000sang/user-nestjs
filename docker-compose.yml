@@ -25,6 +25,8 @@ services:
       - 3000:3000
     volumes:
       - ./nest/src:/app/src
+      - ./nest/public:/app/public
+      - ./nest/views:/app/views
     depends_on:
       - mongo
     networks:
