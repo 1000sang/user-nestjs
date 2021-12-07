@@ -1,6 +1,5 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import * as mongoose from 'mongoose';
@@ -10,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { SuccessInterceptor } from './common/interceptors/success.interceptor';
 import { HttpExceptionFilter } from './common/filter/http-exception.filter';
+import { ChatsModule } from './chats/chats.module';
 
 @Module({
   imports: [
@@ -19,6 +19,7 @@ import { HttpExceptionFilter } from './common/filter/http-exception.filter';
     MongooseModule.forRoot(String(process.env.MONGODB_URI), {}),
     UserModule,
     AuthModule,
+    ChatsModule,
   ],
   controllers: [AppController],
   providers: [
@@ -30,7 +31,6 @@ import { HttpExceptionFilter } from './common/filter/http-exception.filter';
       provide: APP_FILTER,
       useClass: HttpExceptionFilter,
     },
-    AppService,
   ],
 })
 export class AppModule implements NestModule {

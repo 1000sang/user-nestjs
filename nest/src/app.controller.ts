@@ -6,10 +6,7 @@ export class AppController {
   @Render('index')
   root() {
     return {
-      data: {
-        title: 'chatting',
-        copyright: 'aa',
-      },
+      message: 'a',
     };
   }
 }
